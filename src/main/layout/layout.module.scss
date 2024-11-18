@@ -1,0 +1,5 @@
+.container {
+  width: 100%;
+  height: calc(var(--app-height) - $app-bar-height);
+  overflow-y: auto;
+}
