@@ -1,9 +1,13 @@
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation';
-import { IconHomeFilled ,IconVideoFilled,IconUserFilled} from '@tabler/icons-react';
+import { usePathname, useRouter } from 'next/navigation'
+import {
+  IconHomeFilled,
+  IconUserFilled,
+  IconVideoFilled,
+} from '@tabler/icons-react'
+import Tab from './Tab'
 import styles from './app-bar.module.scss'
-import Tab from './Tab';
 
 const FEED_PATH = '/'
 const CREATE_PATH = '/create'
@@ -20,19 +24,19 @@ export default function AppBar() {
   return (
     <div className={styles.container}>
       <Tab
-        label="Feed"
+        label='Feed'
         icon={<IconHomeFilled />}
         active={path === FEED_PATH}
         onClick={() => handleTabClick(FEED_PATH)}
       />
       <Tab
-        label="Create"
+        label='Create'
         icon={<IconVideoFilled />}
         active={path === CREATE_PATH}
         onClick={() => handleTabClick(CREATE_PATH)}
       />
       <Tab
-        label="Profile"
+        label='Profile'
         icon={<IconUserFilled />}
         active={path === PROFILE_PATH}
         onClick={() => handleTabClick(PROFILE_PATH)}

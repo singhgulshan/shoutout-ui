@@ -1,13 +1,12 @@
 import { ReactNode } from 'react'
-import styles from './layout.module.scss'
 import AppBar from './AppBar'
+import styles from './layout.module.scss'
 
 type LayoutProps = {
   children: ReactNode
 }
 
 export default function AppLayout({ children }: Readonly<LayoutProps>) {
-  console.log("Re-Render");
   return (
     <div className={styles.container}>
       {children}

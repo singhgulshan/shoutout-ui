@@ -1,9 +1,13 @@
-"use client"
-import { useCallback, useEffect } from "react"
+'use client'
+
+import { useCallback, useEffect } from 'react'
 
 export default function AppHeight() {
   const handleResize = useCallback(() => {
-    document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+    document.documentElement.style.setProperty(
+      '--app-height',
+      `${window.innerHeight}px`
+    )
   }, [])
 
   useEffect(() => {
