@@ -13,7 +13,10 @@
     "^react$",
     "^next/(.*)$",
     "<THIRD_PARTY_MODULES>",
-    "^(@app|@components|@utils)(/.*)$",
+    "^@app(/.*)$",
+    "^@containers/(.*)$",
+    "^@components/(.*)$",
+    "^@utils/(.*)$",
     "^@styles/(.*)$",
     "^(?!.*[.](css|scss)$)[./].*$",
     "[.](css|scss)$"

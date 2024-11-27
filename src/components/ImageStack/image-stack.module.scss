@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  padding-top: 2rem;
+
+  .stack {
+    width: 100%;
+    position: relative;
+
+    .stack-1 {
+      width: calc(100% - 2rem);
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -2rem;
+      border: 2px solid var(--mantine-color-gray-1);
+      border-radius: 1rem;
+      z-index: 2;
+      background-color: #ffffff;
+    }
+
+    .stack-2 {
+      width: calc(100% - 1rem);
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -1rem;
+      border: 2px solid var(--mantine-color-gray-1);
+      border-radius: 1rem;
+      z-index: 3;
+      background-color: #ffffff;
+    }
+
+    .image {
+      border-radius: 1rem;
+      position: relative;
+      z-index: 5;
+    }
+  }
+}

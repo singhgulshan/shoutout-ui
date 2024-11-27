@@ -28,6 +28,12 @@
       ],
       "@app/*": [
         "./src/main/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@containers/*": [
+        "./src/containers/*"
       ]
     }
   },

@@ -34,6 +34,19 @@ body {
  * Add the correct display in IE 9-.
  */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
 article,
 aside,
 footer,
@@ -139,15 +152,6 @@ abbr[title] {
 b,
 strong {
   font-weight: inherit;
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-  font-weight: bolder;
 }
 
 /**

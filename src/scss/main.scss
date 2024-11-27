@@ -4,18 +4,13 @@
 @import './reset';
 
 #shoutout-main {
-  background-color: $color-body-primary;
+  background-color: var(--mantine-color-gray-0);
   overflow-x: hidden;
 }
 
 // .infinite-scroll-component__outerdiv {
 //   width: 100%;
 // }
-
-:root {
-  --toastify-toast-width: 36rem !important;
-  --app-height: 100vh;
-}
 
 ::-webkit-scrollbar {
   display: none;

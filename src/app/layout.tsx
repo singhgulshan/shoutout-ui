@@ -35,7 +35,7 @@ export default function RootLayout({
         </style>
       </head>
 
-      <body>
+      <body id='shoutout-main'>
         <MantineProvider theme={theme}>
           <AppHeight />
           <AppLayout>{children}</AppLayout>

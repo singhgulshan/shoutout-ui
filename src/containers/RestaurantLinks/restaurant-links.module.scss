@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  gap: 1rem;
+  padding: 0 1.5rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .links {
+    flex: 0 0 auto;
+  }
+}

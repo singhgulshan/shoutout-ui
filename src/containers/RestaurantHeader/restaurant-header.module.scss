@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+
+  .details {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    .details-left {
+      width: 100%;
+
+      h1 {
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    .details-right {
+      flex-shrink: 0;
+    }
+  }
+}
