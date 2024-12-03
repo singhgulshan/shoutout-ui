@@ -3,6 +3,8 @@ import MoreInfo from '@containers/MoreInfo'
 import RestaurantHeader from '@containers/RestaurantHeader'
 import RestaurantLinks from '@containers/RestaurantLinks'
 import RestaurantMenu from '@containers/RestaurantMenu'
+import RestaurantReviews from '@containers/RestaurantReviews'
+import SimilarRestaurants from '@containers/SimilarRestaurants'
 import Surface from '@components/Surface'
 import VerticalSpace from '@components/VerticalSpace'
 
@@ -22,6 +24,9 @@ export default function Home() {
       <VerticalSpace space='1rem' />
       <MoreInfo />
       <VerticalSpace space='1rem' />
+      <RestaurantReviews />
+      <VerticalSpace space='1rem' />
+      <SimilarRestaurants />
     </>
   )
 }

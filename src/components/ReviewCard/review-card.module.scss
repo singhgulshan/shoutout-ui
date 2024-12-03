@@ -1,0 +1,60 @@
+.container {
+  border: 1px solid var(--mantine-color-gray-3);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  width: 22.5rem;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    .user {
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-size: 1.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 10rem;
+      }
+
+      .followers {
+        font-size: 1.2rem;
+        color: var(--mantine-color-gray-6);
+      }
+    }
+
+    .rating {
+      display: flex;
+      padding: 0.5rem;
+      border-radius: 0.8rem;
+      background-color: var(--mantine-color-green-7);
+      color: #ffffff;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .review {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: $color-secondary-text;
+    height: 7.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4; /* Adjust based on the number of lines you want */
+    -webkit-box-orient: vertical;
+  }
+}

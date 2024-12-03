@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  padding-top: 1rem;
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .restaurants {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-top: 1rem;
+
+    .restaurant {
+      padding-left: 1.5rem;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+
+      &:last-child {
+        padding-right: 1.5rem;
+      }
+    }
+  }
+}
