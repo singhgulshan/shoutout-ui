@@ -2,8 +2,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Button, Drawer, useDrawersStack } from '@mantine/core'
+import { Button, Drawer } from '@mantine/core'
 import clsx from 'clsx'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useSwipeable } from 'react-swipeable'
@@ -69,13 +68,6 @@ const video2: Video[] = [
   },
 ]
 
-const DRAWERS = {
-  DETAILS: 'details',
-  CHECKIN: 'checkin',
-} as const
-
-type DrawersStack = (typeof DRAWERS)[keyof typeof DRAWERS]
-
 export default function Feeds() {
   const [videos, setVideos] = useState<Video[]>([])
   const [hasMore, setHasMore] = useState(true)
@@ -88,55 +80,13 @@ export default function Feeds() {
     openCheckin,
     isCheckinOpen,
   } = useAppSidebar()
-  const stack = useDrawersStack<DrawersStack>([
-    DRAWERS.DETAILS,
-    DRAWERS.CHECKIN,
-  ])
+
   const handlers = useSwipeable({
     delta: 20,
     onSwipedLeft,
     preventScrollOnSwipe: true,
     swipeDuration: 500,
   })
-  const router = useRouter()
-
-  // useEffect(() => {
-  //   router
-  //   router.beforePopState(handlePopState)
-
-  //   return () => {
-  //     router.beforePopState(() => true)
-  //   }
-  // }, [router])
-
-  const handlePopState = () => {
-    console.log('popstate')
-    if (isCheckinOpen) {
-      closeCheckin()
-      return false
-    }
-    if (isAppSidebarOpen) {
-      closeAppSidebar()
-      return false
-    }
-    return true
-  }
-
-  useEffect(() => {
-    if (isAppSidebarOpen) {
-      stack.open(DRAWERS.DETAILS)
-    } else {
-      stack.close(DRAWERS.DETAILS)
-    }
-  }, [isAppSidebarOpen])
-
-  useEffect(() => {
-    if (isCheckinOpen) {
-      stack.open(DRAWERS.CHECKIN)
-    } else {
-      stack.close(DRAWERS.CHECKIN)
-    }
-  }, [isCheckinOpen])
 
   function onSwipedLeft() {
     openAppSidebar()
@@ -180,7 +130,6 @@ export default function Feeds() {
         ))}
       </InfiniteScroll>
       <Drawer
-        {...stack.register(DRAWERS.DETAILS)}
         transitionProps={{
           duration: 500,
           transition: {
@@ -196,6 +145,9 @@ export default function Feeds() {
         withCloseButton={false}
         returnFocus={false}
         trapFocus={false}
+        keepMounted
+        opened={isAppSidebarOpen}
+        onClose={closeAppSidebar}
       >
         <RestarauntDetails
           onClickChecking={openCheckin}
@@ -203,13 +155,14 @@ export default function Feeds() {
         />
       </Drawer>
       <Drawer
-        {...stack.register(DRAWERS.CHECKIN)}
         position='right'
         size='100%'
         withOverlay={false}
         withCloseButton={false}
         returnFocus={false}
         trapFocus={false}
+        opened={isCheckinOpen}
+        onClose={closeCheckin}
       >
         <Button color='primary' fullWidth size='lg' onClick={closeCheckin}>
           Close
