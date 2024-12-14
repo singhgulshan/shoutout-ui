@@ -3,14 +3,14 @@
 @import './mixins';
 @import './reset';
 
+:root {
+  --app-bar-height: #{$app-bar-height};
+}
+
 #shoutout-main {
   background-color: var(--mantine-color-gray-0);
   overflow-x: hidden;
 }
-
-// .infinite-scroll-component__outerdiv {
-//   width: 100%;
-// }
 
 ::-webkit-scrollbar {
   display: none;

@@ -1,32 +1,5 @@
-import AboutRestaurant from '@containers/AboutRestaurant'
-import MoreInfo from '@containers/MoreInfo'
-import RestaurantHeader from '@containers/RestaurantHeader'
-import RestaurantLinks from '@containers/RestaurantLinks'
-import RestaurantMenu from '@containers/RestaurantMenu'
-import RestaurantReviews from '@containers/RestaurantReviews'
-import SimilarRestaurants from '@containers/SimilarRestaurants'
-import Surface from '@components/Surface'
-import VerticalSpace from '@components/VerticalSpace'
+import Feeds from '@containers/Feeds'
 
 export default function Home() {
-  return (
-    <>
-      <Surface>
-        <VerticalSpace space='1rem' />
-        <RestaurantHeader />
-        <VerticalSpace space='1.5rem' />
-        <RestaurantLinks />
-        <VerticalSpace space='1.5rem' />
-        <AboutRestaurant />
-      </Surface>
-      <VerticalSpace space='1rem' />
-      <RestaurantMenu />
-      <VerticalSpace space='1rem' />
-      <MoreInfo />
-      <VerticalSpace space='1rem' />
-      <RestaurantReviews />
-      <VerticalSpace space='1rem' />
-      <SimilarRestaurants />
-    </>
-  )
+  return <Feeds />
 }

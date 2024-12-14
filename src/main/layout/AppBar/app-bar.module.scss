@@ -9,4 +9,10 @@
   padding: 0.8rem 1.5rem;
   display: flex;
   justify-content: space-between;
+  transform: translateX(0);
+  transition: transform 500ms ease;
+
+  &.open {
+    transform: translateX(-100%);
+  }
 }

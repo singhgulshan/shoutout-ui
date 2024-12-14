@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  height: calc(var(--app-height) - $app-bar-height);
+  transform: translateX(0);
+  transition: transform 500ms ease;
+
+  &.slide {
+    transform: translateX(-100%);
+  }
+
+  .scroll {
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

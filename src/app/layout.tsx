@@ -6,6 +6,7 @@ import AppHeight from '@app/providers/AppHeight'
 import { theme } from '../theme'
 import '@mantine/core/styles.css'
 import '@styles/main.scss'
+import { AppSidebarProvider } from '@app/providers/AppSidebar'
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -37,8 +38,10 @@ export default function RootLayout({
 
       <body id='shoutout-main'>
         <MantineProvider theme={theme}>
-          <AppHeight />
-          <AppLayout>{children}</AppLayout>
+          <AppSidebarProvider>
+            <AppHeight />
+            <AppLayout>{children}</AppLayout>
+          </AppSidebarProvider>
         </MantineProvider>
       </body>
     </html>

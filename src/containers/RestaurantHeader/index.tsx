@@ -6,11 +6,17 @@ import BackButton from '@components/BackButton'
 import Chip from '@components/Chip'
 import styles from './restaurant-header.module.scss'
 
-export default function RestaurantHeader() {
+interface RestaurantHeaderProps {
+  onClickBack: () => void
+}
+
+export default function RestaurantHeader({
+  onClickBack,
+}: Readonly<RestaurantHeaderProps>) {
   return (
     <AppContainer>
       <div className={styles.container}>
-        <BackButton onClick={() => {}} />
+        <BackButton onClick={onClickBack} />
         <div className={styles.details}>
           <div className={styles['details-left']}>
             <h1>Pizza Hut</h1>
