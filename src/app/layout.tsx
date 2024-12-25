@@ -1,16 +1,16 @@
 import { ReactNode } from 'react'
-import { Work_Sans } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import { ColorSchemeScript, MantineProvider } from '@mantine/core'
 import AppLayout from '@app/layout'
 import AppHeight from '@app/providers/AppHeight'
 import { theme } from '../theme'
 import '@mantine/core/styles.css'
 import '@styles/main.scss'
-import { AppSidebarProvider } from '@app/providers/AppSidebar'
 
-const workSans = Work_Sans({
-  subsets: ['latin'],
+const poppins = Poppins({
   display: 'swap',
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
 })
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
         <style>
           {`
             :root {
-              --font: ${workSans.style.fontFamily};
+              --font: ${poppins.style.fontFamily};
             }
           `}
         </style>
@@ -38,10 +38,8 @@ export default function RootLayout({
 
       <body id='shoutout-main'>
         <MantineProvider theme={theme}>
-          <AppSidebarProvider>
-            <AppHeight />
-            <AppLayout>{children}</AppLayout>
-          </AppSidebarProvider>
+          <AppHeight />
+          <AppLayout>{children}</AppLayout>
         </MantineProvider>
       </body>
     </html>

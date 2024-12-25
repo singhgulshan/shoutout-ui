@@ -2,13 +2,14 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { Button, Drawer } from '@mantine/core'
+import { Drawer } from '@mantine/core'
 import clsx from 'clsx'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useSwipeable } from 'react-swipeable'
 import { useAppSidebar } from '@app/providers/AppSidebar'
 import RestarauntDetails from '@containers/RestaurantDetails'
 import Video from '@components/Video'
+import WalkInOffer from '@components/WalkInOffer'
 import styles from './feeds.module.scss'
 
 type Video = {
@@ -25,23 +26,23 @@ async function wait(time: number) {
 const video1: Video[] = [
   {
     id: '1',
-    url: 'https://media.battlexo.com/shorts/732/d9ff4208-0dd3-457f-ac4c-f9f4a1218027.mp4',
+    url: '/videos/video1.mp4',
   },
   {
     id: '2',
-    url: 'https://media.battlexo.com/shorts/2300/fbf2f8b0-c4e5-44fc-a19b-78a94305bc52.mp4',
+    url: '/videos/video2.mp4',
   },
   {
     id: '3',
-    url: 'https://media.battlexo.com/shorts/2297/46cea35f-9a89-425a-a2ed-984dfbd81ae8.mp4',
+    url: '/videos/video3.mp4',
   },
   {
     id: '4',
-    url: 'https://media.battlexo.com/shorts/2295/e427f86f-7d12-4dd6-9e67-e4406cba5170.mp4',
+    url: '/videos/video4.mp4',
   },
   {
     id: '5',
-    url: 'https://media.battlexo.com/shorts/2289/635bc804-0fc1-48c8-9aee-3e0473ddf4de.mp4',
+    url: '/videos/video5.mp4',
   },
 ]
 
@@ -164,9 +165,7 @@ export default function Feeds() {
         opened={isCheckinOpen}
         onClose={closeCheckin}
       >
-        <Button color='primary' fullWidth size='lg' onClick={closeCheckin}>
-          Close
-        </Button>
+        <WalkInOffer onBack={closeCheckin} />
       </Drawer>
     </div>
   )

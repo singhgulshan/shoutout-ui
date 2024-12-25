@@ -94,12 +94,11 @@ export default function Video({ video }: Readonly<VideoProps>) {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <video muted className={styles['video-overlay']}>
-          <source src={video.url} type='video/mp4' />
-        </video>
-        <video ref={videoRef} playsInline muted loop className={styles.video}>
-          <source src={video.url} type='video/mp4' />
-        </video>
+        <div className={styles['video-overlay']}>
+          <video ref={videoRef} playsInline muted loop className={styles.video}>
+            <source src={video.url} type='video/mp4' />
+          </video>
+        </div>
         <div className={styles.details} onClick={toggleVideo}>
           <div className={styles.reaction}>
             <div className={styles['reaction-details']}>

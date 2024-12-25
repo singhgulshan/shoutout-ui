@@ -15,19 +15,16 @@
     position: relative;
 
     .video-overlay {
-      z-index: 0;
-      position: absolute;
-      object-fit: cover;
-      filter: blur(5px);
+      background-color: #000000;
       height: 100%;
       width: 100%;
-    }
 
-    .video {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
+      .video {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .details {
