@@ -3,6 +3,7 @@
   height: calc(var(--app-height) - $app-bar-height);
   transform: translateX(0);
   transition: transform 500ms ease;
+  background-color: #000000;
 
   &.slide {
     transform: translateX(-100%);
@@ -19,6 +20,12 @@
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 2rem;
     }
   }
 }

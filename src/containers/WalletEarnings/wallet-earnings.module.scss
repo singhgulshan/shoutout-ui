@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+
+  .tab {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--mantine-color-gray-4);
+
+    &:where([data-active]) {
+      color: $color-primary-text;
+      border-color: $color-primary-text;
+    }
+  }
+}

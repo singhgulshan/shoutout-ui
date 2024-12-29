@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 import {
+  IconHeartFilled,
   IconHomeFilled,
   IconUserFilled,
   IconVideoFilled,
@@ -14,6 +15,7 @@ import styles from './app-bar.module.scss'
 const FEED_PATH = '/'
 const CREATE_PATH = '/create'
 const PROFILE_PATH = '/profile'
+const LIKED_PATH = '/liked'
 
 export default function AppBar() {
   const path = usePathname()
@@ -39,9 +41,15 @@ export default function AppBar() {
         onClick={() => handleTabClick(CREATE_PATH)}
       />
       <Tab
+        label='Liked'
+        icon={<IconHeartFilled />}
+        active={path.includes(LIKED_PATH)}
+        onClick={() => handleTabClick(LIKED_PATH)}
+      />
+      <Tab
         label='Profile'
         icon={<IconUserFilled />}
-        active={path === PROFILE_PATH}
+        active={path.includes(PROFILE_PATH)}
         onClick={() => handleTabClick(PROFILE_PATH)}
       />
     </div>

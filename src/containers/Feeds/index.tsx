@@ -127,7 +127,9 @@ export default function Feeds() {
         className={styles.scroll}
       >
         {videos.map((video) => (
-          <Video key={video.id} video={video} />
+          <div key={video.id} className={styles.wrapper}>
+            <Video video={video} />
+          </div>
         ))}
       </InfiniteScroll>
       <Drawer
